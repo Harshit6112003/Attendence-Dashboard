@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, UserCheck, UserX, AlertTriangle, Clock, TrendingUp, Camera, Monitor, Eye, Play, Settings } from 'lucide-react';
+import {  Clock, Camera, Monitor, Eye, Play, Settings } from 'lucide-react';
 
 interface DashboardProps {
   stats: {
@@ -15,39 +15,39 @@ interface DashboardProps {
     time: string;
     camera: string;
   }>;
-  checkedInEmployees: Array<{
-    id: string;
-    name: string;
-    employeeId: string;
-    department: string;
-    checkInTime: string;
-    camera: string;
-    status: 'inside' | 'outside';
-  }>;
+  // checkedInEmployees: Array<{
+  //   id: string;
+  //   name: string;
+  //   employeeId: string;
+  //   department: string;
+  //   checkInTime: string;
+  //   camera: string;
+  //   status: 'inside' | 'outside';
+  // }>;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ stats, recentActivity, checkedInEmployees }) => {
-  const StatCard = ({ title, value, icon: Icon, color, trend }: any) => (
-    <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium text-gray-600">{title}</p>
-          <div className="flex items-center space-x-2 mt-2">
-            <p className="text-3xl font-bold text-gray-900">{value}</p>
-            {trend && (
-              <span className={`text-sm ${trend > 0 ? 'text-green-600' : 'text-red-600'} flex items-center`}>
-                <TrendingUp className="w-4 h-4 mr-1" />
-                {Math.abs(trend)}%
-              </span>
-            )}
-          </div>
-        </div>
-        <div className={`p-3 rounded-full ${color}`}>
-          <Icon className="w-6 h-6 text-white" />
-        </div>
-      </div>
-    </div>
-  );
+const Dashboard: React.FC<DashboardProps> = ({ recentActivity,  }) => {
+  // const StatCard = ({ title, value, icon: Icon, color, trend }: any) => (
+  //   <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+  //     <div className="flex items-center justify-between">
+  //       <div>
+  //         <p className="text-sm font-medium text-gray-600">{title}</p>
+  //         <div className="flex items-center space-x-2 mt-2">
+  //           <p className="text-3xl font-bold text-gray-900">{value}</p>
+  //           {trend && (
+  //             <span className={`text-sm ${trend > 0 ? 'text-green-600' : 'text-red-600'} flex items-center`}>
+  //               <TrendingUp className="w-4 h-4 mr-1" />
+  //               {Math.abs(trend)}%
+  //             </span>
+  //           )}
+  //         </div>
+  //       </div>
+  //       <div className={`p-3 rounded-full ${color}`}>
+  //         <Icon className="w-6 h-6 text-white" />
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 
   const getActionColor = (action: string) => {
     switch (action) {
@@ -118,9 +118,9 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, recentActivity, checkedInE
   return (
     <div className="space-y-6">
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
-          title="Total Employees"
+          title="Total Students"
           value={stats.totalEmployees}
           icon={Users}
           color="bg-blue-600"
@@ -147,7 +147,7 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, recentActivity, checkedInE
           color="bg-orange-600"
           trend={-15}
         />
-      </div>
+      </div> */}
 
       {/* Live Camera Feeds */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100">
@@ -175,14 +175,11 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, recentActivity, checkedInE
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <CameraFeed cameraName="Entry Camera 1" location="Main Entrance" status="active" />
             <CameraFeed cameraName="Entry Camera 2" location="Side Entrance" status="active" />
-            <CameraFeed cameraName="Exit Camera 1" location="Main Exit" status="active" />
-            <CameraFeed cameraName="Exit Camera 2" location="Emergency Exit" status="inactive" />
           </div>
         </div>
       </div>
 
-      {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
         {/* Real-Time Activity */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100">
           <div className="p-6 border-b border-gray-200">
@@ -214,7 +211,7 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, recentActivity, checkedInE
         </div>
 
         {/* Currently Inside Employees */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100">
+        {/* <div className="bg-white rounded-xl shadow-sm border border-gray-100">
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-gray-900 flex items-center">
@@ -270,8 +267,8 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, recentActivity, checkedInE
               )}
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
+    
 
       {/* AI Model Training Section */}
       {/* <div className="bg-white rounded-xl shadow-sm border border-gray-100">

@@ -2,9 +2,9 @@
 import  { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
-import LiveCameras from './components/LiveCameras';
+// import LiveCameras from './components/LiveCameras';
 import EmployeeManagement from './components/EmployeeManagement';
-import Settings from './components/Settings';
+// import Settings from './components/Settings';
 import Attendance from './components/Attendance'; 
 
 
@@ -129,14 +129,14 @@ function App() {
             checkedInEmployees={checkedInEmployees}
           />
         );
-      case 'cameras':
-        return <LiveCameras />;
+      // case 'cameras':
+      //   return <LiveCameras />;
       case 'attendance': // Changed to consistent spelling
         return <Attendance />;
       case 'students': // changed id to lowercase for consistency
         return <EmployeeManagement />;
-      case 'settings':
-        return <Settings />;
+      // case 'settings':
+      //   return <Settings />;
       default:
         return (
           <Dashboard

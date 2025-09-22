@@ -1,5 +1,5 @@
 
-import { Users, Camera, Settings, Home, User } from 'lucide-react';
+import { Users, Camera, Home, User } from 'lucide-react';
 
 interface SidebarProps {
   currentUser: {
@@ -13,10 +13,10 @@ interface SidebarProps {
 
 const navigation = [
   { name: 'Dashboard', id: 'dashboard', icon: Home },
-  { name: 'Live Cameras', id: 'cameras', icon: Camera },
+  // { name: 'Live Cameras', id: 'cameras', icon: Camera },
   { name: 'Attendance', id: 'attendance', icon: Users },
   { name: 'Students', id: 'students', icon: Users },
-  { name: 'Settings', id: 'settings', icon: Settings },
+  // { name: 'Settings', id: 'settings', icon: Settings },
 ];
 
 const getRoleColor = (role: string) => {

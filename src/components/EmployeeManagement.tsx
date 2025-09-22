@@ -299,7 +299,7 @@ const EmployeeManagement: React.FC = () => {
       </div>
 
       {/* Training Section */}
-      <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+      {/* <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-semibold text-gray-900">Face Recognition Model</h3>
@@ -321,7 +321,7 @@ const EmployeeManagement: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Modal */}
       {showAddModal && <AddEmployeeModal />}
